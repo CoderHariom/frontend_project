@@ -1,0 +1,38 @@
+#heading {
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 200px 150px 100px;
+    row-gap: 15px;
+    align-items: center;
+}
+
+#todo_input {
+    margin-right: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+#todo_date {
+    margin-right: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+
+}
+.todo_btn{
+    
+    height: 45px;
+    border-radius: 5px;
+    background-color: rgb(43, 221, 43);
+    border: none;
+    cursor: pointer;
+}
+.btn-delete {
+    height: 45px;
+    border-radius: 5px;
+    background-color: rgb(221, 43, 43);
+    border: none;
+    cursor: pointer;
+}
