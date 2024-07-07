@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+</head>
+<body>
+    <h1> Bat Ball Stump game</h1>
+    <button onclick="
+    let randomNumber=Math.random()*3;
+    console.log(randomNumber);
+    let computerChoice;
+     if(randomNumber>0 && randomNumber<=1){
+        computerChoice='bat';
+     }else if(randomNumber>1 && randomNumber<=2){
+           computerChoice='ball';
+     }else{
+        computerChoice='stump';
+     }
+      
+     let rusultmsg;
+     if(computerChoice==='ball'){
+        resultmsg='user win';
+     }else if(computerChoice==='bat'){
+        resultmsg='match tie'
+     }else{
+        resultmsg='computer win'
+     }
+      alert(`user choose bat. computer choose ${computerChoice}. Result is :${resultmsg}`);
+
+    "
+    >Bat</button>
+
+    
+    <button onclick="
+     randomNumber=Math.random()*3;
+    console.log(randomNumber);
+     computerChoice;
+     if(randomNumber>0 && randomNumber<=1){
+        computerChoice='bat';
+     }else if(randomNumber>1 && randomNumber<=2){
+           computerChoice='ball';
+     }else{
+        computerChoice='stump';
+     }
+      
+      rusultmsg;
+     if(computerChoice==='ball'){
+        resultmsg='match tie';
+     }else if(computerChoice==='bat'){
+        resultmsg='computer win'
+     }else{
+        resultmsg='user win'
+     }
+      alert(`user choose ball. computer choose ${computerChoice}. Result is :${resultmsg}`);
+
+    ">Ball</button>
+
+    <button onclick="
+     randomNumber=Math.random()*3;
+    console.log(randomNumber);
+     computerChoice;
+     if(randomNumber>0 && randomNumber<=1){
+        computerChoice='bat';
+     }else if(randomNumber>1 && randomNumber<=2){
+           computerChoice='ball';
+     }else{
+        computerChoice='stump';
+     }
+      
+      rusultmsg;
+     if(computerChoice==='ball'){
+        resultmsg='computer win';
+     }else if(computerChoice==='bat'){
+        resultmsg='user win'
+     }else{
+        resultmsg='match tie'
+     }
+      alert(`user choose stump. computer choose ${computerChoice}. Result is :${resultmsg}`);
+
+    "
+    
+    >Stump</button>
+
+</body>
+</html>

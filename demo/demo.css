@@ -1,0 +1,46 @@
+#heading {
+    text-align: center;
+}
+
+.item-container {
+    display: grid;
+    grid-template-columns:200px 150px 100px ;
+    column-gap: 15px;
+    margin-left: 20px;
+    margin-bottom: 25px;
+    align-items: center;
+    text-align: center;
+
+}
+
+#demo-input {
+    height: 34px;
+}
+#demo-date {
+    height: 34px;
+}
+
+
+
+#addbtn {
+    width: 95px;
+    height: 34px;
+    background-color: rgb(44, 218, 44);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+#delete-btn {
+    width: 95px;
+    height: 34px;
+    background-color: rgb(230, 59, 16);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+
+}

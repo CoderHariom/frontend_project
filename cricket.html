@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cricket game</title>
+</head>
+
+<body>
+    <h1>BAT BALL STUMP GAME</h1>
+
+    <button onclick="
+    let computerChoice= generateCompChoice();
+     let resultMsg=getResult('Bat',computerChoice);
+     showResult('Bat', computerChoice,resultMsg)
+
+    ">BAT</button>
+
+    <button onclick="
+     computerChoice= generateCompChoice();
+     resultMsg=getResult('Ball',computerChoice);
+     showResult('Ball', computerChoice,resultMsg)
+
+    ">BALL</button>
+
+    <button onclick="
+computerChoice= generateCompChoice();
+resultMsg=getResult('Stump',computerChoice);
+showResult('Stump', computerChoice,resultMsg)
+
+">STUMP</button>
+
+    <button onclick="localStorage.clear();
+    resetbtn();
+    
+
+">Reset</button>
+
+    <script>
+        let scoreStr = localStorage.getItem('score');
+        let score = {
+            win: 0,
+            lost: 0,
+            tie: 0,
+        };
+        //console.log(scoreStr)
+        
+        function resetbtn(scoreStr) {
+            if (scoreStr !== undefined) {
+                score = JSON.parse(scoreStr)
+            } else {
+                score = {
+                    win: 0,
+                    lost: 0,
+                    tie: 0,
+                }
+
+            }
+
+        }
+
+
+
+        function generateCompChoice() {
+            let randomNum = Math.random() * 3
+            // console.log(randomNum)
+
+            if (randomNum < 1) {
+                return 'Bat'
+            } else if (randomNum < 2) {
+                return 'Ball'
+            } else {
+                return 'Stump'
+            }
+        }
+        function getResult(userMove, computerMove) {
+            if (userMove === 'Bat') {
+                if (computerMove === 'Ball') {
+                    score.win++;
+                    resultmsg = 'user win';
+                } else if (computerMove === 'Bat') {
+                    score.tie++;
+                    resultmsg = 'match tie'
+                } else {
+                    score.lost++;
+                    resultmsg = 'computer win'
+                }
+
+            } else if (userMove === 'Ball') {
+                if (computerChoice === 'Ball') {
+                    score.tie++;
+                    resultmsg = 'match tie';
+                } else if (computerChoice === 'Bat') {
+                    score.lost++;
+                    resultmsg = 'computer win'
+                } else {
+                    score.win++;
+                    resultmsg = 'user win'
+                }
+
+            } else {
+                if (computerChoice === 'Ball') {
+                    score.lost++;
+                    resultmsg = 'computer win';
+                } else if (computerChoice === 'Bat') {
+                    score.win++;
+                    resultmsg = 'user win'
+                } else {
+                    score.tie++;
+                    resultmsg = 'match tie'
+                }
+            }
+        }
+        function showResult(userMove, computerChoice, resultMsg) {
+            localStorage.setItem('score', JSON.stringify(score))
+            alert(`user choose ${userMove}. computer choose ${computerChoice}. 
+            Result is :${resultmsg}
+            win:${score.win}
+            lost:${score.lost}
+            tie:${score.tie}
+            `);
+
+        }
+
+    </script>
+
+</body>
+
+</html>
